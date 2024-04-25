@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'style.css' %}"/>
+<div class="row">
+    {% for movie in Movies %}
+    <div class="col">
+        <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="{{ movie.poster_url }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ movie.name }}</h5>
+                <br>
+                <p class="card-text">({{ movie.grade }})</p>
+                <p class="card-text">{{ movie.duration }}</p>
+                <a href="#" class="btn btn-primary">Buy Tickets</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
